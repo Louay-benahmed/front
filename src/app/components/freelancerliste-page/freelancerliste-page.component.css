@@ -1,0 +1,213 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+  transform: translateX(75%); /* Moves the search bar 100% of its width to the right */
+  transition: transform 0.3s ease; /* Smooth transition for the movement */
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 16px 0 0 16px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.search-bar button {
+  background-color: #4481eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 16px 16px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #3578d4;
+}
+
+.search-bar button i {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+
+
+
+
+/* profile-container Section */
+
+
+.profile-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-400px); /* Move the container up by 50px */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 20px;
+}
+
+.header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #007bff;
+}
+
+.header .info {
+  flex: 1;
+}
+
+.header .info h1 {
+  font-size: 26px;
+  color: #007bff;
+}
+
+.header .info p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #555;
+}
+
+.header .info span {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #007bff;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+.section ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.section ul li {
+  background: #f1f1f1;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.ratings ul li {
+  margin: 8px 0;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.disabled {
+  pointer-events: none; /* Makes the div unclickable */
+  opacity: 0.5;        /* Dims the div to give a "shallow" effect */
+  filter: brightness(70%); /* Optional: additional dimming effect */
+  transition: all 0.3s ease; /* Smooth transition for when the class is toggled */
+}
+
+.translate-both {
+  transform: translate(0px, 80px); /* Moves the div 50px to the right and 30px downward */
+}
+
+
+
+.account-button {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  float: right; /* Align the button to the right */
+}
+
+.account-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.close-button {
+  display: inline-block;
+  background: #ff4d4d; /* Red color for "close" effect */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  float: right; /* Align the button to the right */
+}
+
+.close-button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+
+
+

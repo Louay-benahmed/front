@@ -1,0 +1,134 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+</head>
+<body class="bg-gray-100"><br>
+<div [class.disabled]="showOtherDiv">
+  <div class="search-bar flex items-center bg-gray-200 p-2 rounded-lg shadow-lg max-w-lg mx-auto">
+    <input type="text"
+           placeholder="Search freelanser"
+           class="flex-grow p-2 rounded-l-lg text-lg border-none outline-none focus:ring-2 focus:ring-blue-500"
+           (focus)="showOptions = true"
+           (blur)="hideOptions()"/>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-200">
+      <i class="fas fa-search text-xl"></i>
+    </button>
+    <!-- Dropdown options -->
+    <div *ngIf="showOptions" class="absolute bg-white w-full  shadow-lg rounded-lg  translate-both">
+      <ul class="text-gray-700">
+        <li class="p-2 hover:bg-gray-100 cursor-pointer" (click)="selectOption('Option 2')">Search by freelancer name</li>
+        <li class="p-2 hover:bg-gray-100 cursor-pointer" (click)="selectOption('Option 3')">Search by servise type</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="container mx-auto mt-10" (click)="!showOtherDiv && toggleOtherDiv()">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-white shadow p-4 rounded">
+        <i class="fas fa-user"></i> Today's Progress
+        <p class="text-sm text-gray-600 mt-2">Percentage of this day passed</p>
+        <div id="dailyProgress"></div>
+        <div id="dailyPercentage" class="text-center font-semibold">0%</div>
+        <div id="dailyCountdown" class="text-center text-sm text-gray-600"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow p-4 rounded" (click)="!showOtherDiv && toggleOtherDiv()">
+        <i class="fas fa-user"></i> This Week's Progress
+        <p class="text-sm text-gray-600 mt-2">Percentage of this week passed</p>
+        <div id="weeklyProgress"></div>
+        <div id="weeklyPercentage" class="text-center font-semibold">0%</div>
+        <div id="weeklyCountdown" class="text-center text-sm text-gray-600"></div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow p-4 rounded" (click)="!showOtherDiv && toggleOtherDiv()">
+        <i class="fas fa-user"></i> This Month's Progress
+        <p class="text-sm text-gray-600 mt-2">Percentage of this month passed</p>
+        <div id="monthlyProgress"></div>
+        <div id="monthlyPercentage" class="text-center font-semibold">0%</div>
+        <div id="monthlyCountdown" class="text-center text-sm text-gray-600"></div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white shadow p-4 rounded" (click)="!showOtherDiv && toggleOtherDiv()">
+        <i class="fas fa-user"></i> Time until Christmas
+        <p class="text-sm text-gray-600 mt-2">Percentage of the year passed</p>
+        <div id="christmasProgress"></div>
+        <div id="christmasPercentage" class="text-center font-semibold">0%</div>
+        <div id="christmasCountdown" class="text-center text-sm text-gray-600"></div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white shadow p-4 rounded" (click)="!showOtherDiv && toggleOtherDiv()">
+        <i class="fas fa-user"></i> This Year's Progress
+        <p class="text-sm text-gray-600 mt-2">Percentage of this year passed</p>
+        <div id="yearlyProgress"></div>
+        <div id="yearlyPercentage" class="text-center font-semibold">0%</div>
+        <div id="yearlyCountdown" class="text-center text-sm text-gray-600"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- the hidden div -->
+<div *ngIf="showOtherDiv" class="container-section">
+  <div class="profile-container">
+    <!-- Header -->
+    <div class="header">
+      <img src="https://via.placeholder.com/100" alt="Freelancer Profile Picture">
+      <div class="info">
+        <h1>John Doe</h1>
+        <p>Email: johndoeexample.com</p>
+        <button class="account-button" (click)="goTochatPage()">chat with Freelancer</button>
+
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Skills Section -->
+      <div class="section">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React.js</li>
+          <li>Node.js</li>
+        </ul>
+      </div>
+
+      <!-- Services Offered Section -->
+      <div class="section">
+        <h2>Services Offered</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>Frontend Design</li>
+          <li>Backend Development</li>
+        </ul>
+      </div>
+
+      <!-- Ratings Section -->
+      <div class="section">
+        <h2>Ratings</h2>
+        <ul>
+          <li><strong>Client A:</strong> 5/5 - "Amazing work!"</li>
+          <li><strong>Client B:</strong> 4.5/5 - "Highly professional."</li>
+        </ul>
+        <br>
+        <button class="close-button" (click)="toggleOtherDiv()">Close  profile</button>
+        <br><br>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>

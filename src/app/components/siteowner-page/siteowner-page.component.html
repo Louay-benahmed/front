@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Players Management</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Include FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body id="div_body">
+
+<div>
+  <button class="btn btn-danger btn-lg" style="padding: 8px 10px;" onclick="logout()">
+    <i class="fas fa-sign-out-alt" style="transform: scaleX(-1);"></i> Log Out
+  </button>
+</div>
+
+<div [class.disabled]="showOtherDiv || showSigninDiv">
+  <div id="div_accounts" class="container mt-5"  >
+    <div>
+      <h1 class="mb-4">Accounts List :</h1>
+      <button class="btn btn-primary mb-3" (click)="toggleSigninDiv()">
+        <i class="fas fa-user-plus"></i> Add account
+      </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <button class="btn btn-primary mb-3" (click)="scrollToReports()">
+        <i class="fas fa-file-alt"></i> See Reports
+      </button>
+
+
+      <table class="table table-custom">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>account type</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Example rows -->
+        <tr>
+          <td>1</td>
+          <td>JohnDoe</td>
+          <td>johndoeexample.com</td>
+          <td>250</td>
+          <td>
+            <button class="btn btn-danger btn-sm" onclick="confirmDelete()">
+              <i class="fas fa-trash-alt"></i> Delete
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>JaneSmith</td>
+          <td>janesmithexample.com</td>
+          <td>400</td>
+          <td>
+            <button class="btn btn-danger btn-sm" onclick="confirmDelete()">
+              <i class="fas fa-trash-alt"></i> Delete
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div #reportsDiv id="div_list" class="container mt-5">
+    <h1>Reports List:</h1>
+    <table class="table table-custom">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>reporter</th>
+        <th>reporter_ID</th>
+        <th>reported</th>
+        <th>reported_ID</th>
+        <th>Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>JohnDoe</td>
+        <td>johndoe.com</td>
+        <td>250</td>
+        <td>500</td>
+        <td>
+          <button class="btn btn-success btn-sm" (click)="toggleOtherDiv()">
+            <i class="fas fa-info-circle"></i> Details
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>JaneSmith</td>
+        <td>janesmith.com</td>
+        <td>400</td>
+        <td>300</td>
+        <td>
+          <button class="btn btn-success btn-sm" (click)="toggleOtherDiv()">
+            <i class="fas fa-info-circle"></i> Details
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- the hidden div -->
+<div *ngIf="showOtherDiv" class="report-container">
+
+  <div class="report-section">
+    <div class="notification-box">
+      Report statue :
+      <br>
+      <br>
+      Please upgrade to a paid plan for premium features like custom domains, removing the Pico branding, and more.
+    </div>
+
+    <label>Client Information:</label>
+    <input type="text" placeholder="Client ID; Client Name" readonly>
+
+    <label>Freelancer Information:</label>
+    <input type="text" placeholder="Freelancer ID; Freelancer Name" readonly>
+    <br>
+    <label>Reason:</label>
+    <br>
+    <textarea placeholder="Description of the service provided" readonly rows="7" cols="90">
+      This service includes professional software development and consulting.aaaaaaaaaaaaaaa
+      You can expect high-quality results with efficient project management.ddddddddddddddd
+    </textarea>    <br>
+    <div class="submit-button" (click)="toggleOtherDiv()"
+         style="padding: 10px 30px; font-size: 16px; width: 200px; text-align: center; margin-left: auto; margin-right: 0;"
+    >close</div>
+
+    <br>
+  </div>
+</div>
+
+<!-- the hidden div of sign up-->
+
+<div *ngIf="showSigninDiv" class="sign-up-field" >
+  <h2 class="title">Sign Up</h2>
+  <!-- Username -->
+  <div class="input-field">
+    <i class="fas fa-user"></i>
+    <input type="text" name="username" placeholder="Username" required />
+  </div>
+  <!-- Password -->
+  <div class="input-field">
+    <i class="fas fa-lock"></i>
+    <input type="password" name="password" placeholder="Password" required />
+  </div>
+  <!-- Email -->
+  <div class="input-field">
+    <i class="fas fa-envelope"></i>
+    <input type="email" name="email" placeholder="Email" required />
+  </div>
+  <!-- Account Type -->
+  <div class="input-field">
+    <i class="fas fa-user-tag"></i>
+    <select name="accountType" required>
+      <option value="" disabled selected hidden>Select Account Type</option>
+      <option value="client">Client</option>
+      <option value="freelancer">Freelancer</option>
+    </select>
+  </div>
+
+  <!-- Skills (conditional for freelancers) -->
+  <div class="input-field" id="skillsField" style="display: none;">
+    <i class="fas fa-tools"></i>
+    <input
+      type="text"
+      name="skills"
+      placeholder="Skills (comma-separated)"
+    />
+  </div>
+  <input type="submit" value="Add Account" class="btn solid" />
+</div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #2d3748; /* Dark gray */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 16px;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #4a5568; /* Hover effect */
+  border-radius: 4px;
+}
+
+/* Hero Section */
+header {
+  background-color: #4481eb; /* Dark background for hero */
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+
+}
+
+header p {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+header button {
+  padding: 12px 24px;
+  background-color: #3182ce;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #63b3ed;
+}
+
+/* About Section */
+section#about {
+  background-color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+section#about h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+section#about p {
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+/* Features Section */
+section#features {
+  text-align: center;
+  padding: 50px 0;
+}
+
+section#features h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+section#features p {
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+/* solution Section */
+section#solution {
+  text-align: center;
+  padding: 50px 0;
+}
+
+section#solution h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+section#solution p {
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+/* solution Section */
+section#problem {
+  text-align: center;
+  padding: 50px 0;
+}
+
+section#problem h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+section#problem p {
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+
+
+
+/* Footer */
+footer {
+  background-color: #4481eb;
+  color: white;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section#about h2 {
+    font-size: 2rem;
+  }
+
+  section#pricing h2 {
+    font-size: 2rem;
+  }
+
+  .pricing-card {
+    margin: 10px 0;
+  }
+}

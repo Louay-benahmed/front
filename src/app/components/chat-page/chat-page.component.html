@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-blue-50 h-screen flex flex-col">
+<header class="text-center py-3" [class.disabled]="showOtherDiv || showdescriptionDiv">
+    <h1 class="text-3xl font-bold">Bugs Bunny Hints</h1>
+    <p class="text-xl">"Please keep all chats respectful. </p>
+    <p>Any inappropriate messages may result in deletion and further action."</p>
+    <button class="bg-purple-500 rounded py-2 px-4 text-white font-bold right-button"
+            id="sendrequest"
+            (click)="toggleOtherDiv()">
+      confirme requeste
+    </button>
+
+    <button class="bg-purple-500 rounded py-2 px-4 text-white font-bold right-buttonreport"
+            id="sendreport"
+            (click)="toggleOtherDivdescription()">
+      sent report
+    </button>
+  <button class="bg-purple-500 rounded py-2 px-4 text-white font-bold right-buttonrating"
+          id="rating"
+          (click)="togglefeedbackDiv()">
+      rating
+  </button>
+  </header>
+  <div class="flex-grow overflow-hidden" [class.disabled]="showOtherDiv || showdescriptionDiv" >
+    <div id="chatbox" class="flex flex-col items-start bg-white px-4 py-3 rounded-lg shadow border-4 space-y-2.5 overflow-y-scroll h-full mx-4"></div>
+  </div>
+  <div class="fixed bottom-0 inset-x-0 py-2 px-4 flex flex-row mt-5 mb-4 w-full border-t border-gray-200" [class.disabled]="showOtherDiv || showdescriptionDiv">
+    <input class="shadow flex-grow rounded p-2 mr-2 text-black" id="messageInput" type="text" placeholder="Type your question here...">
+    <button class="bg-purple-500 rounded py-2 px-4 text-white font-bold"
+            id="sendButton"
+            (click)="sendMessage()">
+      sent
+    </button>
+  </div>
+
+<!-- the hidden div -->
+<div *ngIf="showOtherDiv" class="container">
+
+  <div class="background-section">
+    <div class="info-section">
+      <label for="serviceStatus">Service status:</label>
+      <br>
+      <input id="serviceStatus" type="text" placeholder="Enter service status here" style="width: 100%;">
+    </div>
+
+    <label>client information :</label>
+    <input type="text" placeholder="client ID  ;  client name" readonly>
+
+    <label>freelancer information :</label>
+    <input type="text" placeholder="freelancer ID  ;  freelancer name" readonly>
+
+    <label>Servise description :</label>
+    <br> <br>
+    <textarea placeholder="Description of the service provided"  rows="7" cols="90">
+
+    </textarea>
+    <br>
+    <label>service price :</label>
+    <br>
+    <input type="text" placeholder="enter service price">
+    <br>
+    <div (click)="toggleOtherDiv()" class="action-button green"
+         style="padding: 10px 30px; font-size: 16px; width: 200px; text-align: center;margin-left: auto; margin-right: 0;">
+      post request</div>
+    <br>
+
+  </div>
+</div>
+
+
+  <!-- the hidden  repoert description div -->
+  <div *ngIf="showdescriptionDiv" class="container">
+    <div class="background-section">
+      <div class="info-section">
+        <label >report status:</label>
+        <br>
+        <input id="reportStatus" type="text" placeholder="Enter service status here" style="width: 100%;">
+      </div>
+
+      <label>client information :</label>
+      <input type="text" placeholder="client ID  ;  client name" readonly>
+
+      <label>freelancer information :</label>
+      <input type="text" placeholder="client ID  ;  freelancer name" readonly>
+      <br>
+      <label>Reason :</label>
+      <br>
+      <textarea placeholder="Description of the service provided"  rows="7" cols="90">
+
+      </textarea>
+      <br>
+      <div class="action-button green"
+           style="padding: 10px 30px; font-size: 16px; width: 200px; text-align: center;margin-left: auto; margin-right: 0;">
+         sent report</div>
+      <br>
+    </div>
+  </div>
+
+
+<div *ngIf="showfeedbackDiv"  class="relative px-4 py-10 bg-white mx-4 md:mx-0 shadow rounded-3xl sm:p-10 custom-width">
+  <div class="max-w-md mx-auto">
+    <div class="text-center font-semibold text-xl mb-5">How likely are you to recommend us to a friend or colleague?</div>
+
+    <!-- Rating bubbles 0 to 10 -->
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-4 text-center mb-6">
+      <div class="flex justify-center">
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="0">0</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="1">1</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="2">2</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="3">3</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="4">4</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="5">5</button>
+      </div>
+      <div class="flex justify-center">
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="6">6</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="7">7</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="8">8</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="9">9</button>
+        <button class="rating-btn mr-1 w-10 h-10 bg-blue-500 font-bold text-white rounded-full focus:bg-blue-700" data-rating="10">10</button>
+      </div>
+    </div>
+
+    <div class="text-center mb-8">
+      <span class="text-sm">0 - Extremely Unlikely</span>
+      <span class="ml-4 text-sm">10 - Extremely Likely</span>
+    </div>
+
+    <!-- Feedback form -->
+    <form id="feedback-form" novalidate="">
+      <div class="text-sm font-semibold mb-3">Feedback</div>
+      <div>
+        <textarea name="suggestion" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-xl w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" placeholder="your Feedback" required=""></textarea>
+      </div>
+
+
+      <div class="mt-6 mb-4 flex items-center justify-center">
+        <div id="spinner" class="w-6 h-6 border-t-2 border-b-2 border-blue-500 rounded-full hidden animate-spin"></div><br>
+        <button type="submit" class="bg-blue-500 font-bold text-white py-2 px-5 rounded-xl">Submit Feedback</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

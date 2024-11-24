@@ -1,0 +1,249 @@
+<!-- Home Page - home.component.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello | Responsive Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="font-sans">
+<!-- Navigation -->
+<nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-white text-2xl">Up Work</a>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="#features" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
+          <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+          <a (click)="goToNewPage()" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
+        </div>
+      </div>
+      <div class="-mr-2 flex md:hidden">
+        <button type="button" class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Heroicon name: outline/menu -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <!-- Heroicon name: outline/x -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="md:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Sign In</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header>
+  <div class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div>
+        <main class="sm:mt-10">
+          <div class="sm:text-center lg:text-left">
+            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+              <span class="block xl:inline">Welcome to <span class="text-indigo-600">Hello!</span></span>
+              <span class="block text-indigo-400 xl:inline">We're here to help.</span>
+            </h1>
+            <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              Finding the right talent or project can be challenging. Whether you're a business in need of skilled professionals or a freelancer searching for new opportunities, we make it easy for you to connect, collaborate, and succeed.            </p>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+              <div class="rounded-md shadow">
+                <!-- * * * * * * * * * * * * * navigation button * * * * * * * * * * * * * * * * * * * -->
+                <button (click)="goToNewPage()" class="navigate-button">Sign up</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase text-center">About</h2>
+
+    <!-- Table Layout for Side-by-Side Content -->
+    <div class="mt-10">
+      <table class="w-full table-auto">
+        <tr>
+          <!-- Text Content Column -->
+          <td class="w-1/2 pr-8">
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              At [Your Company Name], we connect businesses with skilled freelancers to help you achieve your
+              goals. Whether you're looking for a developer, designer, or writer, we make it easy to find the
+              right talent for your projects.
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500">
+              We believe in helping freelancers grow by offering opportunities that match their skills.
+              With easy collaboration tools and secure payments, we make sure both businesses and freelancers
+              can work together smoothly.
+            </p>
+          </td>
+
+          <!-- Image Column -->
+          <td class="w-1/2">
+            <img ngSrc="public/images/features.jpg" alt="Freelancer" class="w-full h-auto rounded-lg shadow-lg" height="506"
+                 width="900">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section id="features" class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase text-center">Features</h2>
+
+    <!-- Table Layout for Side-by-Side Content -->
+    <div class="mt-10">
+      <table class="w-full table-auto">
+        <tr>
+          <!-- Image Column -->
+          <td class="w-1/2">
+            <img ngSrc="public/images/features.jpg" alt="Freelancer" class="w-full h-auto rounded-lg shadow-lg" height="506"
+                 width="900">          </td>
+          <!-- Text Content Column -->
+          <td class="w-1/2 pr-8">
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Looking for the right talent or the perfect project? You’re in the right place. We connect
+              businesses with skilled freelancers to help make projects happen, big or small.
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500">
+              At [Your Company Name], we make it easy to find, work with, and pay the right people.
+              Our platform is designed to keep things simple, secure, and flexible so you can focus on what
+              matters most—getting the job done.
+
+              Join us today, and let’s create something great together!
+            </p>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section id="solution" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase text-center">Problem</h2>
+
+    <!-- Table Layout for Side-by-Side Content -->
+    <div class="mt-10">
+      <table class="w-full table-auto">
+        <tr>
+          <!-- Text Content Column -->
+          <td class="w-1/2 pr-8">
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Our company's solution to the customer's problem
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500">
+              Finding the right talent or the right project can be time-consuming and frustrating. Businesses struggle to find skilled professionals quickly, while freelancers face challenges in finding consistent work or the right clients. On top of that, managing payments, communication, and contracts can be a hassle.
+            </p>
+          </td>
+
+          <!-- Image Column -->
+          <td class="w-1/2">
+            <img ngSrc="public/images/features.jpg" alt="Freelancer" class="w-full h-auto rounded-lg shadow-lg" height="506"
+                 width="900">          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase text-center">Solution</h2>
+
+    <!-- Table Layout for Side-by-Side Content -->
+    <div class="mt-10">
+      <table class="w-full table-auto">
+        <tr>
+          <!-- Image Column -->
+          <td class="w-1/2">
+            <img ngSrc="public/images/features.jpg" alt="Freelancer" class="w-full h-auto rounded-lg shadow-lg" height="506"
+                 width="900">          </td>
+          <!-- Text Content Column -->
+          <td class="w-1/2 pr-8">
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Highlight the customer's pain point
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500">
+              At [Your Company Name], we solve these problems by making it easy to connect with the right people, manage your projects smoothly, and ensure secure payments. Whether you're a business looking for top talent or a freelancer seeking your next opportunity, our platform streamlines the process, saving you time and effort. We bring you peace of mind with our simple, secure, and efficient solution.
+            </p>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Contact Us Section -->
+<section id="contact" >
+    <div class="lg:text-center">
+      <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contact Us</h2>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="bg-gray-800 text-white">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full sm:w-1/2 md:w-1/3">
+        <h3 class="font-bold mb-4">Contact Information</h3>
+        <p class="mb-2"><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</p>
+        <p class="mb-2"><i class="fas fa-envelope"></i> info.com</p>
+        <p><i class="fas fa-phone-alt"></i> +1 234 567 890</p>
+      </div>
+      <div class="w-full sm:w-1/2 md:w-1/3">
+        <h3 class="font-bold mb-4">Follow Us</h3>
+        <div class="flex">
+          <a href="#" class="mr-4"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="mr-4"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="mr-4"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="mr-4"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2 md:w-1/3">
+        <h3 class="font-bold mb-4">Additional Resources</h3>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
+

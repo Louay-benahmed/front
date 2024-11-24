@@ -1,0 +1,296 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+  transform: translateX(75%); /* Moves the search bar 100% of its width to the right */
+  transition: transform 0.3s ease; /* Smooth transition for the movement */
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 16px 0 0 16px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.search-bar button {
+  background-color: #4481eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 16px 16px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #3578d4;
+}
+
+.search-bar button i {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+
+/* css de formulaire  */
+
+
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transform: translateY(-900px); /* Move the container up by 50px */
+}
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 20px 0;
+  background-color: #f28482;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #e06c6b;
+}
+.info {
+  background-color: #ffefef;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border-left: 4px solid #f28482;
+}
+.picos {
+  margin-top: 20px;
+}
+.pico {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+.pico button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a4e69;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.pico button:hover {
+  background-color: #3b3e58;
+}
+.usage {
+  margin-top: 40px;
+}
+.usage p {
+  margin: 10px 0;
+}
+.usage a {
+  color: #f28482;
+  text-decoration: none;
+}
+.usage a:hover {
+  text-decoration: underline;
+}
+.background-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #e3e6f0;
+  border-radius: 8px;
+}
+.background-section h3 {
+  margin-top: 0;
+}
+.background-section input[type="color"],
+.background-section input[type="text"],
+.background-section select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.background-section .toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.background-section .toggle input {
+  margin-right: 10px;
+}
+.background-section .button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: pointer;
+}
+.background-section .button.green {
+  background-color: #34a853;
+  color: white;
+}
+.background-section .button.green:hover {
+  background-color: #2c8c48;
+}
+.background-section .button.red {
+  background-color: #ea4335;
+  color: white;
+}
+.background-section .button.red:hover {
+  background-color: #d93a2e;
+}
+.background-section .button.purple {
+  background-color: #9b51e0;
+  color: white;
+}
+.background-section .button.purple:hover {
+  background-color: #873fb6;
+}
+
+.disabled {
+  pointer-events: none; /* Makes the div unclickable */
+  opacity: 0.5;        /* Dims the div to give a "shallow" effect */
+  filter: brightness(70%); /* Optional: additional dimming effect */
+  transition: all 0.3s ease; /* Smooth transition for when the class is toggled */
+}
+
+.translate-both {
+  transform: translate(0px, 80px); /* Moves the div 50px to the right and 30px downward */
+}
+
+
+/* the hidden  service description div */
+.container-section {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-920px); /* Move the container up by 50px */
+}
+
+/* Info Section */
+.info-section {
+  background-color: #97c3f3;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border-left: 4px solid #f28482;
+}
+
+/* Pico Section */
+.pico-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+/* Background Section */
+.background-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #e3e6f0;
+  border-radius: 8px;
+}
+
+.background-section .action-button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px; /* Customize the corner rounding here */
+
+}
+.background-section .action-button.green {
+  background-color: #34a853;
+  color: white;
+}
+.background-section .action-button.green:hover {
+  background-color: #2c8c48;
+}
+.background-section .action-button.red {
+  background-color: #ea4335;
+  color: white;
+}
+.background-section .action-button.red:hover {
+  background-color: #d93a2e;
+
+}
+.background-section .action-button.purple {
+  background-color: #9b51e0;
+  color: white;
+}
+.background-section .action-button.purple:hover {
+  background-color: #873fb6;
+}
+
+
+/*log out button css */
+.custom-logout-button {
+  padding: 8px 10px;
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  font-size: 1.25rem; /* Large button text size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background-color 0.3s ease;
+  /* Translation values: adjust these to move the button */
+  transform: translate(50px, 40px); /* Move 50px to the right and 20px down */
+}
+
+.custom-logout-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.custom-logout-button:active {
+  background-color: #a71d2a; /* Darkest red on active */
+}
+
+.custom-icon {
+  display: inline-block;
+  transform: scaleX(-1); /* Mirror the icon horizontally */
+  font-style: normal; /* Ensure it has no italic styling */
+}
+
+/* Optional: Add a font-awesome fallback if not using the library */
+.custom-icon:before {
+  content: "\f2f5"; /* Unicode for sign-out icon in Font Awesome */
+  font-family: "Font Awesome 5 Free"; /* Ensure Font Awesome is loaded */
+  font-weight: 900; /* Font Awesome solid icon weight */
+}
+
